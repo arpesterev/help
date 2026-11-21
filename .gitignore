@@ -112,3 +112,11 @@ hs_err_pid*
 *.iml
 out
 gen
+
+# Local configuration and runtime data
+/.env
+/.env.*
+!/.env.example
+/src/main/resources/application-local.properties
+/src/main/resources/application-dev.local.properties
+/logs/
