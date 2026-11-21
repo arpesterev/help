@@ -1,6 +1,6 @@
 # Help: Spring Boot chat prototype
 
-A Java 8 / Spring Boot prototype with registration, form authentication, JSP pages and WebSocket-based chat messaging. Data is stored in PostgreSQL through Spring Data JPA.
+A Java 8 / Spring Boot prototype with registration, form authentication, JSP pages and WebSocket-based chat messaging. User/registration data is stored in PostgreSQL through Spring Data JPA; chat messages and rooms use Spring Data MongoDB.
 
 ## Code map
 
@@ -12,7 +12,7 @@ A Java 8 / Spring Boot prototype with registration, form authentication, JSP pag
 
 ## Local setup
 
-Prerequisites: Java 8, Maven and a locally accessible PostgreSQL database with the schema expected by the application.
+Prerequisites: Java 8-compatible tooling (CI uses JDK 11), Maven, a locally accessible PostgreSQL database and MongoDB.
 
 ```sh
 cp .env.example .env
@@ -23,7 +23,7 @@ set +a
 mvn spring-boot:run
 ```
 
-The default Spring profile is `dev`. Its datasource URL, username and password are read from `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD`. These variables must be defined before launching the application.
+MongoDB settings are in `src/main/resources/application.yml` and must also be appropriate for your local setup. The default Spring profile is `dev`. Its datasource URL, username and password are read from `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD`. These variables must be defined before launching the application.
 
 ## Security and support status
 
